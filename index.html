@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Business Analyst & Analista Functional TI</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #24292e; max-width: 850px; margin: 0 auto; padding: 2rem; background-color: #f6f8fa; }
+        .card { background: #ffffff; padding: 2.5rem; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        h1 { color: #0366d6; border-bottom: 2px solid #eaecef; padding-bottom: 0.3em; margin-top: 0; }
+        h2 { color: #24292e; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; margin-top: 1.5rem; }
+        h3 { color: #24292e; margin-top: 1.2rem; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background-color: #f1f8ff; color: #0366d6; border: 1px solid #c8e1ff; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-right: 6px; margin-bottom: 8px; }
+        .meta-table { width: 100%; border-collapse: collapse; margin-top: 1rem; margin-bottom: 1rem; }
+        .meta-table td, .meta-table th { padding: 8px 12px; border: 1px solid #e1e4e8; }
+        .meta-table td:first-child { font-weight: bold; background-color: #fafbfc; width: 30%; }
+        .meta-table th { background-color: #fafbfc; text-align: left; }
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.4rem; }
+        .header-banner { background: linear-gradient(135deg, #0366d6 0%, #102a43 100%); color: white; padding: 2rem; border-radius: 8px; text-align: center; margin-bottom: 2rem; }
+        blockquote { border-left: 4px solid #0366d6; margin: 0; padding-left: 1rem; color: #586069; font-style: italic; background-color: #f8f9fa; padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1 style="color: white; border: none; margin: 0;">Carmen Alicia González</h1>
+        <p style="font-size: 1.2rem; margin-top: 0.5rem; opacity: 0.9;">Business Analyst & Analista Functional TI</p>
+        <p style="font-size: 0.95rem; opacity: 0.8;">Especialista en Integración de Sistemas, Gobernanza de Requerimientos, Calidad y Trazabilidad SDLC</p>
+    </div> 
+
+    
+    <!-- CASO DE ÉXITO 1 -->
+    <div class="card">
+        <h1>Caso 1: Caso Funcional — Gestión de Interrupciones por Grupo de Trabajo</h1>
+        <blockquote>
+            <strong>Caso anonimizado para portafolio profesional.</strong><br>
+            El nombre real del cliente y las personas involucradas fueron reemplazados por nombres genéricos.
+        </blockquote>
+
+        <h2>1. Contexto</h2>
+        <p>Una empresa de servicios con diferentes <strong>centros/unidades de operación</strong> administra grupos de colaboradores que no comparten necesariamente los mismos tipos de permisos o interrupciones.</p>
+        <p>Actualmente, la asociación entre interrupciones y grupos requiere una configuración técnica que no puede ser gestionada directamente por el cliente desde la aplicación.</p>
+
+        <h3>Problema identificado</h3>
+        <p>El sistema permite visualizar interrupciones sin aplicar correctamente la segmentación por grupo de trabajo. Esto puede provocar que:</p>
+        <ul>
+            <li>Un programador visualice interrupciones que no corresponden a su grupo.</li>
+            <li>Un empleado pueda seleccionar permisos que no aplican a su unidad.</li>
+            <li>El cliente dependa de una configuración técnica para modificar la relación entre interrupciones y grupos.</li>
+        </ul>
+
+        <h3>Objetivo funcional</h3>
+        <p>Permitir que las interrupciones puedan asociarse a grupos de trabajo y que la aplicación filtre automáticamente las interrupciones disponibles de acuerdo con el grupo al que pertenece el usuario.</p>
+
+        <h2>2. Actores</h2>
+        <table class="meta-table">
+            <thead>
+                <tr>
+                    <th>Actor</th>
+                    <th>Responsabilidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Administrador del cliente</td><td>Crea/configura interrupciones y las asocia a grupos</td></tr>
+                <tr><td>Programador de turnos</td><td>Programa personal y asigna interrupciones</td></tr>
+                <tr><td>Empleado / Portal</td><td>Solicita permisos o interrupciones</td></tr>
+                <tr><td>Analista Funcional</td><td>Levanta, documenta y valida el requerimiento</td></tr>
+                <tr><td>Equipo de Desarrollo</td><td>Diseña e implementa la solución</td></tr>
+                <tr><td>QA</td><td>Valida el comportamiento funcional</td></tr>
+            </tbody>
+        </table>
+
+        <h2>3. Historias de Usuario</h2>
+
+        <h3>HU-01 — Asociación de interrupciones a grupos</h3>
+        <p><strong>Como</strong> administrador del cliente,<br>
+        <strong>quiero</strong> asociar una interrupción a uno o varios grupos de trabajo,<br>
+        <strong>para</strong> definir qué grupos pueden utilizar o visualizar cada tipo de interrupción.</p>
+
+        <h4>Criterios de aceptación</h4>
+        <p><strong>CA-01.1 — Crear asociación</strong></p>
+        <ul>
+            <li>Dado que el administrador tiene permisos de configuración,</li>
+            <li>cuando cree o edite una interrupción,</li>
+            <li>entonces el sistema debe permitir seleccionar el grupo o grupos de trabajo a los que aplica.</li>
+        </ul>
+
+        <p><strong>CA-01.2 — Asociación obligatoria</strong></p>
+        <ul>
+            <li>Dado que se está configurando una interrupción,</li>
+            <li>cuando el administrador intente guardar la configuración sin grupo asociado,</li>
+            <li>entonces el sistema debe informar que debe existir al menos una asociación válida.</li>
+        </ul>
+
+        <p><strong>CA-01.3 — Múltiples grupos</strong></p>
+        <ul>
+            <li>Dado que una interrupción aplica a diferentes grupos,</li>
+            <li>cuando el administrador seleccione varios grupos,</li>
+            <li>entonces la interrupción debe quedar disponible para todos los grupos seleccionados.</li>
+        </ul>
+
+        <p><strong>CA-01.4 — Independencia entre grupos</strong></p>
+        <ul>
+            <li>Dado que existen diferentes grupos de trabajo,</li>
+            <li>cuando una interrupción sea asociada únicamente al Grupo A,</li>
+            <li>entonces dicha interrupción no debe estar disponible para el Grupo B.</li>
+        </ul>
+
+        <p><strong>CA-01.5 — Gestión desde la aplicación</strong></p>
+        <ul>
+            <li>Dado que el administrador requiere modificar la segmentación,</li>
+            <li>cuando acceda a la funcionalidad de configuración,</li>
+            <li>entonces debe poder realizar la asociación desde la aplicación sin requerir intervención directa sobre la base de datos.</li>
+        </ul>
+
+        <h3>HU-02 — Visualización de interrupciones según grupo del programador</h3>
+        <p><strong>Como</strong> programador de turnos,<br>
+        <strong>quiero</strong> visualizar únicamente las interrupciones asociadas a los grupos que tengo autorizados,<br>
+        <strong>para</strong> evitar asignar permisos que no corresponden al personal que estoy programando.</p>
+
+        <h4>Criterios de aceptación</h4>
+        <p><strong>CA-02.1 — Filtrado por grupo</strong></p>
+        <ul>
+            <li>Dado que el programador tiene asignado el Grupo A,</li>
+            <li>cuando ingrese a la funcionalidad de asignación de interrupciones,</li>
+            <li>entonces el sistema debe mostrar únicamente las interrupciones asociadas al Grupo A.</li>
+        </ul>
+
+        <p><strong>CA-02.2 — Exclusión de interrupciones</strong></p>
+        <ul>
+            <li>Dado que una interrupción está asociada al Grupo B y no al Grupo A,</li>
+            <li>cuando el programador del Grupo A consulte las interrupciones,</li>
+            <li>entonces la interrupción del Grupo B no debe aparecer.</li>
+        </ul>
+
+        <p><strong>CA-02.3 — Programador con varios grupos</strong></p>
+        <ul>
+            <li>Dado que un programador tiene autorización sobre los Grupos A y B,</li>
+            <li>cuando consulte las interrupciones,</li>
+            <li>entonces debe visualizar las interrupciones asociadas a cualquiera de los grupos que tiene autorizados.</li>
+        </ul>
+
+        <p><strong>CA-02.4 — Aplicación durante la asignación</strong></p>
+        <ul>
+            <li>Dado que el programador selecciona un colaborador perteneciente a un grupo,</li>
+            <li>cuando consulte las interrupciones disponibles,</li>
+            <li>entonces el sistema debe aplicar la segmentación correspondiente al grupo del colaborador.</li>
+        </ul>
+
+        <p><strong>CA-02.5 — No alterar permisos existentes</strong></p>
+        <ul>
+            <li>La nueva funcionalidad no debe modificar la configuración de grupos que ya tiene asignada cada usuario programador.</li>
+        </ul>
+
+        <h3>HU-03 — Visualización de interrupciones en el portal del empleado</h3>
+        <p><strong>Como</strong> empleado,<br>
+        <strong>quiero</strong> visualizar únicamente los tipos de interrupción que aplican a mi grupo de trabajo,<br>
+        <strong>para</strong> solicitar permisos válidos de acuerdo con las reglas de mi unidad de operación.</p>
+
+        <h4>Criterios de aceptación</h4>
+        <p><strong>CA-03.1 — Identificación del grupo</strong></p>
+        <ul>
+            <li>Dado que el empleado está asociado a un grupo mediante su enrolamiento,</li>
+            <li>cuando ingrese al portal de empleados,</li>
+            <li>entonces el sistema debe identificar automáticamente su grupo de trabajo.</li>
+        </ul>
+
+        <p><strong>CA-03.2 — Filtrado de permisos</strong></p>
+        <ul>
+            <li>Dado que el empleado pertenece al Grupo A,</li>
+            <li>cuando solicite un permiso,</li>
+            <li>entonces únicamente deben mostrarse las interrupciones asociadas al Grupo A.</li>
+        </ul>
+
+        <p><strong>CA-03.3 — Exclusión de otros grupos</strong></p>
+        <ul>
+            <li>Dado que una interrupción pertenece exclusivamente al Grupo B,</li>
+            <li>cuando un empleado del Grupo A consulte los tipos de permiso,</li>
+            <li>entonces dicha interrupción no debe estar disponible.</li>
+        </ul>
+
+        <p><strong>CA-03.4 — Solicitud válida</strong></p>
+        <ul>
+            <li>Dado que el empleado selecciona una interrupción disponible para su grupo,</li>
+            <li>cuando registre la solicitud,</li>
+            <li>entonces el sistema debe permitir continuar con el flujo normal de solicitud.</li>
+        </ul>
+
+        <p><strong>CA-03.5 — Consistencia de la segmentación</strong></p>
+        <ul>
+            <li>La segmentación aplicada en el portal debe corresponder a la misma configuración de asociación entre interrupciones y grupos definida por el administrador.</li>
+        </ul>
+
+        <h2>4. Reglas de Negocio</h2>
+        <ul>
+            <li><strong>RN-01 — Asociación por grupo:</strong> Cada interrupción debe poder relacionarse con uno o varios grupos de trabajo.</li>
+            <li><strong>RN-02 — Visibilidad condicionada:</strong> Un usuario solo debe visualizar interrupciones que sean válidas para el grupo correspondiente según su rol y asociación.</li>
+            <li><strong>RN-03 — Programador de turnos:</strong> El programador solo debe gestionar interrupciones correspondientes a los grupos que tiene autorizados.</li>
+            <li><strong>RN-04 — Portal de empleados:</strong> El empleado solo debe solicitar interrupciones disponibles para su grupo de trabajo.</li>
+            <li><strong>RN-05 — Configuración administrable:</strong> La relación entre interrupciones y grupos debe poder administrarse funcionalmente desde la aplicación, evitando depender de cambios directos en base de datos.</li>
+            <li><strong>RN-06 — Integridad:</strong> La implementación no debe modificar las asociaciones existentes entre usuarios y grupos.</li>
+        </ul>
+
+        <h2>5. Escenarios Funcionales Principales</h2>
+        <table class="meta-table">
+            <thead>
+                <tr>
+                    <th>Escenario</th>
+                    <th>Resultado esperado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Administrador asocia interrupción al Grupo A</td><td>La interrupción queda disponible para Grupo A</td></tr>
+                <tr><td>Administrador asocia interrupción a A y B</td><td>La interrupción queda disponible para ambos grupos</td></tr>
+                <tr><td>Programador de Grupo A consulta interrupciones</td><td>Solo visualiza interrupciones válidas para A</td></tr>
+                <tr><td>Empleado de Grupo A solicita permiso</td><td>Solo visualiza permisos válidos para A</td></tr>
+                <tr><td>Interrupción pertenece a Grupo B</td><td>No debe aparecer para usuarios de Grupo A</td></tr>
+                <tr><td>Administrador modifica asociación</td><td>La nueva segmentación se aplica sin intervención técnica sobre BD</td></tr>
+            </tbody>
+        </table>
+
+        <h2>6. Alcance</h2>
+        <h3>Incluye</h3>
+        <ul>
+            <li>Asociación de interrupciones a grupos.</li>
+            <li>Consulta de asociaciones existentes.</li>
+            <li>Segmentación de interrupciones para programadores.</li>
+            <li>Segmentación de interrupciones para empleados.</li>
+            <li>Validación funcional de los diferentes escenarios.</li>
+            <li>Conservación de las asociaciones existentes entre usuarios y grupos.</li>
+        </ul>
+
+        <h3>No incluye</h3>
+        <ul>
+            <li>Modificación de la estructura de base de datos.</li>
+            <li>Rediseño del módulo de programación de turnos.</li>
+            <li>Cambios en el proceso de enrolamiento.</li>
+            <li>Cambios en las reglas de cálculo de nómina.</li>
+            <li>Creación de nuevos tipos de interrupción fuera del alcance de esta funcionalidad.</li>
+        </ul>
+
+        <h2>7. Trazabilidad Funcional</h2>
+        <p><strong>Necesidad del negocio → Requerimiento → Historias de usuario → Criterios de aceptación → Pruebas funcionales → UAT</strong></p>
+        <p>La principal decisión funcional fue separar la necesidad en tres capacidades:</p>
+        <ol>
+            <li><strong>Parametrizar</strong> la relación interrupción–grupo.</li>
+            <li><strong>Aplicar</strong> la segmentación al programador de turnos.</li>
+            <li><strong>Aplicar</strong> la misma segmentación al portal del empleado.</li>
+        </ol>
+        <p>Esto permite mantener trazabilidad entre la necesidad planteada por el cliente y los escenarios que deben ser validados por QA/UAT.</p>
+
+        <h2>8. Evidencia del Análisis Funcional</h2>
+        <p>El requerimiento fue identificado durante una sesión de levantamiento en la que se evidenció que la configuración podía realizarse técnicamente mediante base de datos, pero que la necesidad del cliente era poder administrar la relación directamente desde la aplicación.</p>
+        <p>El análisis funcional permitió convertir esa necesidad operativa en:</p>
+        <ul>
+            <li>actores y roles;</li>
+            <li>reglas de negocio;</li>
+            <li>historias de usuario;</li>
+            <li>criterios de aceptación;</li>
+            <li>escenarios funcionales;</li>
+            <li>alcance y exclusiones;</li>
+            <li>trazabilidad para pruebas.</li>
+        </ul>
+
+        <h2>Competencias Clave</h2>
+        <div style="margin-top: 1rem;">
+            <span class="badge">Análisis Funcional</span>
+            <span class="badge">Elicitación de Requerimientos</span>
+            <span class="badge">Historias de Usuario (INVEST)</span>
+            <span class="badge">Criterios de Aceptación (Given-When-Then)</span>
+            <span class="badge">Reglas de Negocio</span>
+            <span class="badge">Workforce Management</span>
+            <span class="badge">Trazabilidad Funcional</span>
+        </div>
+    </div>
+
+    <!-- CASO DE ÉXITO 2 -->
+    <div class="card">
+        <h1>Caso 2: Elicitación y Alineación Funcional mediante Talleres de Requerimientos</h1>
+        <p><strong>Proyecto:</strong> Refinamiento y Alineación de Alcance Funcional &nbsp;|&nbsp; <strong>Rol:</strong> Senior Business Analyst</p>
+
+        <h2>1. Resumen Ejecutivo</h2>
+        <table class="meta-table">
+            <tr><td>Rol</td><td>Senior Business Analyst / Facilitador Funcional</td></tr>
+            <tr><td>Técnicas</td><td>Requirements Workshops, Elicitación Estructurada, BPMN (As-Is / To-Be)</td></tr>
+            <tr><td>Entregables</td><td>Matriz de Trazabilidad, Historias de Usuario (INVEST), Criterios de Aceptación (Given-When-Then), Reglas de Negocio</td></tr>
+            <tr><td>Estado</td><td>Aprobado 100% por el Cliente – Transferido a Desarrollo</td></tr>
+        </table>
+
+        <h2>2. Contexto y Desafío de Negocio</h2>
+        <p>El cliente contaba con expectativas ambiguas y desalineadas sobre una solución de negocio compleja. El reto consistía en facilitar la elicitación funcional, resolver desacuerdos entre áreas y estructurar un alcance definitivo sin riesgo de retrabajos.</p>
+
+        <h2>3. Responsabilidades y Liderazgo Funcional</h2>
+        <ul>
+            <li><strong>Facilitación de Talleres (Requirements Workshops):</strong> Diseñé y lideré talleres interdisciplinarios con stakeholders clave para destilar necesidades ambiguas y alcanzar consensos operacionales.</li>
+            <li><strong>Modelado de Procesos y Reglas:</strong> Mapeé flujos de proceso (As-Is / To-Be) y estructuré historias de usuario bajo estándar INVEST con criterios de aceptación verificables (Given-When-Then).</li>
+            <li><strong>Optimización Asistida por IA:</strong> Utilicé herramientas de IA para analizar la consistencia entre las minutas de los talleres y las reglas de negocio, acelerando la redacción documental y la detección temprana de vacíos de información.</li>
+            <li><strong>Gobernanza y Trazabilidad:</strong> Construí la Matriz de Trazabilidad de Requerimientos para garantizar la alineación entre la visión del negocio y la estimación del equipo técnico.</li>
+        </ul>
+
+        <h2>4. Resultados e Impacto</h2>
+        <ul>
+            <li>Consenso total y aprobación formal del 100% del alcance por parte del cliente al cierre de las sesiones.</li>
+            <li>Cero desviaciones de alcance y cero retrabajos identificados durante la fase de estimación técnica por Desarrollo.</li>
+        </ul>
+
+        <h2>5. Competencias Clave</h2>
+        <div style="margin-top: 1rem;">
+            <span class="badge">Requirements Workshops</span>
+            <span class="badge">Requirements Elicitation</span>
+            <span class="badge">Stakeholder Alignment</span>
+            <span class="badge">BPMN Modeling</span>
+            <span class="badge">User Stories & Acceptance Criteria</span>
+            <span class="badge">Traceability Matrix</span>
+            <span class="badge">Risk Mitigation</span>
+        </div>
+    </div>
+
+    <!-- CASO DE ÉXITO 3 -->
+    <div class="card">
+        <h1>Caso 3: Gobernanza de Backlog, Trazabilidad End-to-End y Gestión de Requerimientos</h1>
+        <p><strong>Proyecto:</strong> Soluciones de Nómina y Workforce Management &nbsp;|&nbsp; <strong>Rol:</strong> Senior Business Analyst / Governance Lead</p>
+
+        <h2>1. Resumen Ejecutivo</h2>
+        <table class="meta-table">
+            <tr><td>Rol</td><td>Senior Business Analyst / Governance Lead</td></tr>
+            <tr><td>Herramientas</td><td>Azure DevOps (Estructuración/Requerimientos), Jira (Gestión Operativa de Casos)</td></tr>
+            <tr><td>Dominio</td><td>Workforce Management, Liquidación de Nómina, Ciclo SDLC End-to-End</td></tr>
+            <tr><td>Estado</td><td>Gobernanza Operativa Establecida – Ciclo Continuo de Entregas Validadas</td></tr>
+        </table>
+
+        <h2>2. Contexto y Desafío de Negocio</h2>
+        <p>En proyectos multiequipo de Nómina y Workforce Management, la falta de una visión unificada del backlog generaba cuellos de botella y desacoples entre las expectativas del cliente, las entregas de desarrollo y las validaciones de QA e Infraestructura. Se requería estructurar una gobernanza clara sobre el ciclo de vida completo de cada requerimiento.</p>
+
+        <h2>3. Responsabilidades y Liderazgo Funcional</h2>
+        <ul>
+            <li><strong>Estructuración y Registro en Azure DevOps:</strong> Diseñé la arquitectura del backlog documental en Azure DevOps, estandarizando Historias de Usuario bajo formato INVEST, Criterios de Aceptación verificables y trazabilidad directa a reglas de negocio.</li>
+            <li><strong>Gestión Operativa y Defectos en Jira:</strong> Integré el seguimiento dinámico en Jira para controlar avances, bloqueos, evidencias de prueba y resultados de UAT, complementando la gestión documental con control operativo.</li>
+            <li><strong>Articulación Interdisciplinaria:</strong> Coordiné reuniones de alineación periódicas entre Cliente, Desarrollo, QA, Nómina e Infraestructura para disipar dependencias y agilizar aprobaciones.</li>
+            <li><strong>Seguimiento End-to-End:</strong> Acompañé cada requerimiento a través de todas las fases del ciclo de vida (Solicitud → Análisis → Definición/Aprobación → Desarrollo → QA → UAT → Producción).</li>
+            <li><strong>Optimización con IA:</strong> Implementé modelos de IA para la auditoría continua del backlog, identificando dependencias cruzadas entre componentes de nómina y acelerando la validación funcional.</li>
+        </ul>
+
+        <h2>4. Resultados e Impacto</h2>
+        <ul>
+            <li>Visibilidad y control del 100% sobre el estado real de cada requerimiento del backlog en tiempo real.</li>
+            <li>Reducción sustancial de bloqueos entre áreas operativas y eliminación de ambigüedades en la fase de UAT.</li>
+            <li>Canal de comunicación estructurado y eficiente entre el negocio y las células de desarrollo técnico.</li>
+        </ul>
+
+        <h2>5. Competencias Clave</h2>
+        <div style="margin-top: 1rem;">
+            <span class="badge">Backlog Governance</span>
+            <span class="badge">Requirements Traceability</span>
+            <span class="badge">Azure DevOps</span>
+            <span class="badge">Jira</span>
+            <span class="badge">Agile / Scrum</span>
+            <span class="badge">Acceptance Criteria</span>
+            <span class="badge">End-to-End SDLC</span>
+            <span class="badge">Stakeholder Management</span>
+        </div>
+    </div>
+
+</body>
+</html>
