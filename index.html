@@ -37,58 +37,58 @@
         <table class="meta-table">
             <tr>
                 <td>Dominio</td>
-                <td>Workforce Management[cite: 3]</td>
+                <td>Workforce Management</td>
             </tr>
             <tr>
                 <td>Rol</td>
-                <td>Analista Funcional con enfoque QA[cite: 3]</td>
+                <td>Analista Funcional con enfoque QA</td>
             </tr>
             <tr>
                 <td>Tipo de Caso</td>
-                <td>Caso funcional anonimizado[cite: 3]</td>
+                <td>Caso funcional anonimizado</td>
             </tr>
             <tr>
                 <td>Organización de Referencia</td>
-                <td>AquaEnergy Services[cite: 3]</td>
+                <td>AquaEnergy Services</td>
             </tr>
             <tr>
                 <td>Módulos Involucrados</td>
-                <td>Cliente Grueso, Programador de Turnos y Portal de Empleados[cite: 3]</td>
+                <td>Cliente Grueso, Programador de Turnos y Portal de Empleados</td>
             </tr>
         </table>
 
         <h2>1. Resumen Ejecutivo</h2>
-        <p>Se requiere implementar una funcionalidad que permita asociar interrupciones a uno o varios grupos de trabajo y controlar su disponibilidad en los módulos operativos según las asociaciones configuradas[cite: 3].</p>
-        <p>La necesidad consiste en evitar que los programadores de turnos y los empleados visualicen o soliciten interrupciones que no corresponden a su ámbito operativo[cite: 3].</p>
+        <p>Se requiere implementar una funcionalidad que permita asociar interrupciones a uno o varios grupos de trabajo y controlar su disponibilidad en los módulos operativos según las asociaciones configuradas.</p>
+        <p>La necesidad consiste en evitar que los programadores de turnos y los empleados visualicen o soliciten interrupciones que no corresponden a su ámbito operativo.</p>
         <p><strong>La solución contempla tres capacidades principales:</strong></p>
         <ol>
-            <li>Administrar la asociación entre interrupciones y grupos de trabajo[cite: 3].</li>
-            <li>Filtrar las interrupciones disponibles en el Programador de Turnos según los grupos autorizados al programador[cite: 3].</li>
-            <li>Filtrar las interrupciones disponibles en el Portal de Empleados según el grupo de trabajo al que pertenece el empleado[cite: 3].</li>
+            <li>Administrar la asociación entre interrupciones y grupos de trabajo.</li>
+            <li>Filtrar las interrupciones disponibles en el Programador de Turnos según los grupos autorizados al programador.</li>
+            <li>Filtrar las interrupciones disponibles en el Portal de Empleados según el grupo de trabajo al que pertenece el empleado.</li>
         </ol>
-        <p>El análisis se enfoca en la segmentación funcional, las reglas de negocio, la consistencia entre módulos y la trazabilidad desde el requerimiento hasta las pruebas de aceptación[cite: 3].</p>
+        <p>El análisis se enfoca en la segmentación funcional, las reglas de negocio, la consistencia entre módulos y la trazabilidad desde el requerimiento hasta las pruebas de aceptación.</p>
 
         <h2>2. Contexto y Necesidad del Negocio</h2>
-        <p>En una solución de Workforce Management[cite: 3], diferentes grupos de trabajo pueden operar bajo condiciones, actividades y necesidades particulares[cite: 3].</p>
-        <p>Cuando las interrupciones disponibles no se segmentan según el grupo correspondiente, pueden presentarse situaciones como[cite: 3]:</p>
+        <p>En una solución de Workforce Management, diferentes grupos de trabajo pueden operar bajo condiciones, actividades y necesidades particulares.</p>
+        <p>Cuando las interrupciones disponibles no se segmentan según el grupo correspondiente, pueden presentarse situaciones como:</p>
         <ul>
-            <li>Visualización de interrupciones que no corresponden al grupo de trabajo[cite: 3].</li>
-            <li>Selección de opciones no aplicables durante la programación de turnos[cite: 3].</li>
-            <li>Disponibilidad de interrupciones ajenas al contexto operativo del empleado[cite: 3].</li>
-            <li>Inconsistencias entre las opciones administradas y las presentadas en los módulos consumidores[cite: 3].</li>
+            <li>Visualización de interrupciones que no corresponden al grupo de trabajo.</li>
+            <li>Selección de opciones no aplicables durante la programación de turnos.</li>
+            <li>Disponibilidad de interrupciones ajenas al contexto operativo del empleado.</li>
+            <li>Inconsistencias entre las opciones administradas y las presentadas en los módulos consumidores.</li>
         </ul>
-        <p>La necesidad funcional es centralizar la asociación de interrupciones con grupos de trabajo y utilizar esa configuración como criterio de filtrado en los módulos correspondientes[cite: 3].</p>
-        <p><strong>Problema que se busca resolver:</strong> garantizar que cada usuario visualice únicamente las interrupciones habilitadas para su contexto operativo, de acuerdo con las asociaciones y autorizaciones definidas[cite: 3].</p>
+        <p>La necesidad funcional es centralizar la asociación de interrupciones con grupos de trabajo y utilizar esa configuración como criterio de filtrado en los módulos correspondientes.</p>
+        <p><strong>Problema que se busca resolver:</strong> garantizar que cada usuario visualice únicamente las interrupciones habilitadas para su contexto operativo, de acuerdo con las asociaciones y autorizaciones definidas.</p>
 
         <h2>3. Objetivo Funcional</h2>
-        <p>Definir los requerimientos, las reglas de negocio y los criterios de aceptación necesarios para asociar interrupciones a grupos de trabajo y controlar su visualización y selección en el Programador de Turnos y el Portal de Empleados[cite: 3].</p>
+        <p>Definir los requerimientos, las reglas de negocio y los criterios de aceptación necesarios para asociar interrupciones a grupos de trabajo y controlar su visualización y selección en el Programador de Turnos y el Portal de Empleados.</p>
         <h3>Objetivos específicos</h3>
         <ul>
-            <li>Permitir la administración de asociaciones entre interrupciones y grupos de trabajo[cite: 3].</li>
-            <li>Restringir las opciones disponibles en el Programador de Turnos según los grupos autorizados al programador[cite: 3].</li>
-            <li>Restringir las opciones disponibles en el Portal de Empleados según el grupo del empleado[cite: 3].</li>
-            <li>Establecer condiciones verificables para validar el comportamiento esperado[cite: 3].</li>
-            <li>Facilitar la trazabilidad entre historias de usuario, criterios de aceptación y casos de prueba[cite: 3].</li>
+            <li>Permitir la administración de asociaciones entre interrupciones y grupos de trabajo.</li>
+            <li>Restringir las opciones disponibles en el Programador de Turnos según los grupos autorizados al programador.</li>
+            <li>Restringir las opciones disponibles en el Portal de Empleados según el grupo del empleado.</li>
+            <li>Establecer condiciones verificables para validar el comportamiento esperado.</li>
+            <li>Facilitar la trazabilidad entre historias de usuario, criterios de aceptación y casos de prueba.</li>
         </ul>
 
         <h2>4. Actores Involucrados</h2>
@@ -102,27 +102,27 @@
             <tbody>
                 <tr>
                     <td>Administrador funcional</td>
-                    <td>Configura las asociaciones entre interrupciones y grupos de trabajo[cite: 3].</td>
+                    <td>Configura las asociaciones entre interrupciones y grupos de trabajo.</td>
                 </tr>
                 <tr>
                     <td>Programador de turnos</td>
-                    <td>Consulta y asigna interrupciones disponibles para los grupos que tiene autorizados[cite: 3].</td>
+                    <td>Consulta y asigna interrupciones disponibles para los grupos que tiene autorizados.</td>
                 </tr>
                 <tr>
                     <td>Empleado</td>
-                    <td>Consulta y solicita interrupciones habilitadas para su grupo de trabajo[cite: 3].</td>
+                    <td>Consulta y solicita interrupciones habilitadas para su grupo de trabajo.</td>
                 </tr>
                 <tr>
                     <td>Analista Funcional</td>
-                    <td>Levanta y documenta los requerimientos, reglas de negocio, alcance y criterios de aceptación[cite: 3].</td>
+                    <td>Levanta y documenta los requerimientos, reglas de negocio, alcance y criterios de aceptación.</td>
                 </tr>
                 <tr>
                     <td>Equipo de Desarrollo</td>
-                    <td>Analiza la solución técnica e implementa el comportamiento acordado[cite: 3].</td>
+                    <td>Analiza la solución técnica e implementa el comportamiento acordado.</td>
                 </tr>
                 <tr>
                     <td>QA / Usuario de negocio</td>
-                    <td>Verifica el cumplimiento de los criterios de aceptación y los escenarios definidos[cite: 3].</td>
+                    <td>Verifica el cumplimiento de los criterios de aceptación y los escenarios definidos.</td>
                 </tr>
             </tbody>
         </table>
@@ -130,36 +130,36 @@
         <h2>5. Alcance Funcional</h2>
         <h3>Incluido</h3>
         <ul>
-            <li>Asociación de una o varias interrupciones con uno o varios grupos de trabajo[cite: 3].</li>
-            <li>Consulta y administración de las asociaciones desde el contexto funcional de Cliente Grueso[cite: 3].</li>
-            <li>Filtrado de interrupciones en el Programador de Turnos según los grupos autorizados[cite: 3].</li>
-            <li>Filtrado de interrupciones en el Portal de Empleados según el grupo del empleado[cite: 3].</li>
-            <li>Validación de la correspondencia entre la configuración y las opciones disponibles en los módulos consumidores[cite: 3].</li>
-            <li>Definición de escenarios positivos, negativos y de regresión[cite: 3].</li>
+            <li>Asociación de una o varias interrupciones con uno o varios grupos de trabajo.</li>
+            <li>Consulta y administración de las asociaciones desde el contexto funcional de Cliente Grueso.</li>
+            <li>Filtrado de interrupciones en el Programador de Turnos según los grupos autorizados.</li>
+            <li>Filtrado de interrupciones en el Portal de Empleados según el grupo del empleado.</li>
+            <li>Validación de la correspondencia entre la configuración y las opciones disponibles en los módulos consumidores.</li>
+            <li>Definición de escenarios positivos, negativos y de regresión.</li>
         </ul>
 
         <h3>Fuera del alcance definido</h3>
         <ul>
-            <li>Creación o modificación de los grupos de trabajo[cite: 3].</li>
-            <li>Creación o modificación de la relación de los empleados con sus grupos[cite: 3].</li>
-            <li>Definición de una interfaz específica de administración dentro del módulo Seguridad[cite: 3].</li>
-            <li>Carga automática de descripciones, términos y condiciones de las interrupciones[cite: 3].</li>
-            <li>Cambios en las reglas de negocio que determinan cómo se crean las interrupciones[cite: 3].</li>
-            <li>Modificaciones al proceso de cálculo de turnos o de liquidación de nómina[cite: 3].</li>
+            <li>Creación o modificación de los grupos de trabajo.</li>
+            <li>Creación o modificación de la relación de los empleados con sus grupos.</li>
+            <li>Definición de una interfaz específica de administración dentro del módulo Seguridad.</li>
+            <li>Carga automática de descripciones, términos y condiciones de las interrupciones.</li>
+            <li>Cambios en las reglas de negocio que determinan cómo se crean las interrupciones.</li>
+            <li>Modificaciones al proceso de cálculo de turnos o de liquidación de nómina.</li>
         </ul>
-        <p><em>Estos elementos requieren análisis adicional si el negocio desea incorporarlos en una evolución posterior[cite: 3].</em></p>
+        <p><em>Estos elementos requieren análisis adicional si el negocio desea incorporarlos en una evolución posterior.</em></p>
 
         <h2>6. Precondiciones y Supuestos</h2>
         <ol>
-            <li>Los grupos de trabajo existen previamente en el sistema[cite: 3].</li>
-            <li>Las interrupciones continúan creándose desde Cliente Grueso[cite: 3].</li>
-            <li>Los programadores cuentan con los grupos de trabajo autorizados que les corresponden[cite: 3].</li>
-            <li>Los empleados tienen una asociación previa con un grupo de trabajo[cite: 3].</li>
-            <li>Los módulos consumidores pueden consultar la configuración necesaria para aplicar los filtros[cite: 3].</li>
-            <li>Los permisos de acceso y las reglas de autorización existentes continúan vigentes[cite: 3].</li>
+            <li>Los grupos de trabajo existen previamente en el sistema.</li>
+            <li>Las interrupciones continúan creándose desde Cliente Grueso.</li>
+            <li>Los programadores cuentan con los grupos de trabajo autorizados que les corresponden.</li>
+            <li>Los empleados tienen una asociación previa con un grupo de trabajo.</li>
+            <li>Los módulos consumidores pueden consultar la configuración necesaria para aplicar los filtros.</li>
+            <li>Los permisos de acceso y las reglas de autorización existentes continúan vigentes.</li>
         </ol>
         <blockquote>
-            <strong>Consideración funcional:</strong> el filtrado de opciones en pantalla debe complementarse con las validaciones de autorización que correspondan en las operaciones de consulta y registro. La forma técnica de implementar estas validaciones debe acordarse con el equipo de Desarrollo[cite: 3].
+            <strong>Consideración funcional:</strong> el filtrado de opciones en pantalla debe complementarse con las validaciones de autorización que correspondan en las operaciones de consulta y registro. La forma técnica de implementar estas validaciones debe acordarse con el equipo de Desarrollo.
         </blockquote>
 
         <h2>7. Reglas de Negocio</h2>
@@ -173,92 +173,92 @@
             <tbody>
                 <tr>
                     <td>RN-01</td>
-                    <td>Una interrupción puede asociarse a uno o varios grupos de trabajo, según la configuración permitida[cite: 3].</td>
+                    <td>Una interrupción puede asociarse a uno o varios grupos de trabajo, según la configuración permitida.</td>
                 </tr>
                 <tr>
                     <td>RN-02</td>
-                    <td>Un grupo de trabajo puede tener asociadas varias interrupciones[cite: 3].</td>
+                    <td>Un grupo de trabajo puede tener asociadas varias interrupciones.</td>
                 </tr>
                 <tr>
                     <td>RN-03</td>
-                    <td>El Programador de Turnos debe presentar únicamente las interrupciones asociadas a los grupos autorizados al programador[cite: 3].</td>
+                    <td>El Programador de Turnos debe presentar únicamente las interrupciones asociadas a los grupos autorizados al programador.</td>
                 </tr>
                 <tr>
                     <td>RN-04</td>
-                    <td>El Portal de Empleados debe presentar únicamente las interrupciones asociadas al grupo de trabajo del empleado[cite: 3].</td>
+                    <td>El Portal de Empleados debe presentar únicamente las interrupciones asociadas al grupo de trabajo del empleado.</td>
                 </tr>
                 <tr>
                     <td>RN-05</td>
-                    <td>Las asociaciones configuradas deben ser consistentes entre los módulos que consumen esta información[cite: 3].</td>
+                    <td>Las asociaciones configuradas deben ser consistentes entre los módulos que consumen esta información.</td>
                 </tr>
                 <tr>
                     <td>RN-06</td>
-                    <td>Una interrupción no asociada al grupo correspondiente no debe estar disponible para selección en ese contexto[cite: 3].</td>
+                    <td>Una interrupción no asociada al grupo correspondiente no debe estar disponible para selección en ese contexto.</td>
                 </tr>
                 <tr>
                     <td>RN-07</td>
-                    <td>Las reglas de acceso existentes deben mantenerse y no pueden ser sustituidas únicamente por filtros visuales[cite: 3].</td>
+                    <td>Las reglas de acceso existentes deben mantenerse y no pueden ser sustituidas únicamente por filtros visuales.</td>
                 </tr>
             </tbody>
         </table>
-        <p><strong>Pendiente de definición con el negocio:</strong> el comportamiento ante grupos sin interrupciones asociadas, la actualización de asociaciones durante una sesión activa, la eliminación de asociaciones con solicitudes existentes y las reglas de duplicidad deben confirmarse antes de considerarse requisitos aprobados[cite: 3].</p>
+        <p><strong>Pendiente de definición con el negocio:</strong> el comportamiento ante grupos sin interrupciones asociadas, la actualización de asociaciones durante una sesión activa, la eliminación de asociaciones con solicitudes existentes y las reglas de duplicidad deben confirmarse antes de considerarse requisitos aprobados.</p>
 
         <h2>8. Historias de Usuario y Criterios de Aceptación</h2>
 
         <h3>HU-01. Asociación de interrupciones a grupos de trabajo</h3>
         <p><strong>Como</strong> administrador funcional,<br>
         <strong>quiero</strong> asociar interrupciones existentes a uno o varios grupos de trabajo,<br>
-        <strong>para</strong> controlar en qué contextos operativos estarán disponibles para su consulta y selección[cite: 3].</p>
-        <p><strong>Prioridad:</strong> Alta &nbsp;|&nbsp; <strong>Módulo de referencia:</strong> Cliente Grueso &nbsp;|&nbsp; <strong>Criterios asociados:</strong> CA-01 a CA-05[cite: 3]</p>
+        <strong>para</strong> controlar en qué contextos operativos estarán disponibles para su consulta y selección.</p>
+        <p><strong>Prioridad:</strong> Alta &nbsp;|&nbsp; <strong>Módulo de referencia:</strong> Cliente Grueso &nbsp;|&nbsp; <strong>Criterios asociados:</strong> CA-01 a CA-05</p>
 
         <h4>Criterios de Aceptación (HU-01)</h4>
         <ul>
-            <li><strong>CA-01. Consulta de interrupciones disponibles:</strong> Dado que el administrador funcional accede a la gestión de asociaciones, cuando consulta las interrupciones disponibles, entonces el sistema debe permitir identificar las interrupciones existentes que pueden asociarse a grupos de trabajo[cite: 3].</li>
-            <li><strong>CA-02. Asociación de una interrupción a un grupo:</strong> Dado que existe una interrupción y un grupo de trabajo válidos, cuando el administrador registra la asociación, entonces el sistema debe guardar la relación entre la interrupción y el grupo seleccionado[cite: 3].</li>
-            <li><strong>CA-03. Asociación de una interrupción a varios grupos:</strong> Dado que una interrupción puede habilitarse para diferentes grupos de trabajo, cuando el administrador configura su asociación con varios grupos, entonces el sistema debe permitir mantener las relaciones definidas, de acuerdo con las reglas de negocio aprobadas[cite: 3].</li>
-            <li><strong>CA-04. Consulta de asociaciones registradas:</strong> Dado que existen asociaciones previamente registradas, cuando el administrador consulta la configuración, entonces el sistema debe permitir identificar las relaciones existentes entre interrupciones y grupos de trabajo[cite: 3].</li>
-            <li><strong>CA-05. Validación de datos de asociación:</strong> Dado que el administrador intenta registrar una asociación, cuando falta información obligatoria o alguno de los elementos no cumple las condiciones de validez definidas, entonces el sistema debe impedir el registro inconsistente e informar la condición que debe corregirse[cite: 3].</li>
+            <li><strong>CA-01. Consulta de interrupciones disponibles:</strong> Dado que el administrador funcional accede a la gestión de asociaciones, cuando consulta las interrupciones disponibles, entonces el sistema debe permitir identificar las interrupciones existentes que pueden asociarse a grupos de trabajo.</li>
+            <li><strong>CA-02. Asociación de una interrupción a un grupo:</strong> Dado que existe una interrupción y un grupo de trabajo válidos, cuando el administrador registra la asociación, entonces el sistema debe guardar la relación entre la interrupción y el grupo seleccionado.</li>
+            <li><strong>CA-03. Asociación de una interrupción a varios grupos:</strong> Dado que una interrupción puede habilitarse para diferentes grupos de trabajo, cuando el administrador configura su asociación con varios grupos, entonces el sistema debe permitir mantener las relaciones definidas, de acuerdo con las reglas de negocio aprobadas.</li>
+            <li><strong>CA-04. Consulta de asociaciones registradas:</strong> Dado que existen asociaciones previamente registradas, cuando el administrador consulta la configuración, entonces el sistema debe permitir identificar las relaciones existentes entre interrupciones y grupos de trabajo.</li>
+            <li><strong>CA-05. Validación de datos de asociación:</strong> Dado que el administrador intenta registrar una asociación, cuando falta información obligatoria o alguno de los elementos no cumple las condiciones de validez definidas, entonces el sistema debe impedir el registro inconsistente e informar la condición que debe corregirse.</li>
         </ul>
 
         <h3>HU-02. Filtrado de interrupciones en el Programador de Turnos</h3>
         <p><strong>Como</strong> programador de turnos,<br>
         <strong>quiero</strong> visualizar y asignar únicamente las interrupciones asociadas a los grupos de trabajo que tengo autorizados,<br>
-        <strong>para</strong> gestionar la programación de acuerdo con mi ámbito operativo[cite: 3].</p>
-        <p><strong>Prioridad:</strong> Alta &nbsp;|&nbsp; <strong>Módulo:</strong> Programador de Turnos &nbsp;|&nbsp; <strong>Criterios asociados:</strong> CA-06 a CA-09[cite: 3]</p>
+        <strong>para</strong> gestionar la programación de acuerdo con mi ámbito operativo.</p>
+        <p><strong>Prioridad:</strong> Alta &nbsp;|&nbsp; <strong>Módulo:</strong> Programador de Turnos &nbsp;|&nbsp; <strong>Criterios asociados:</strong> CA-06 a CA-09</p>
 
         <h4>Criterios de Aceptación (HU-02)</h4>
         <ul>
-            <li><strong>CA-06. Visualización de interrupciones autorizadas:</strong> Dado que el programador tiene autorización sobre uno o varios grupos de trabajo, cuando consulta las interrupciones disponibles en el Programador de Turnos, entonces el sistema debe mostrar las interrupciones asociadas a los grupos autorizados[cite: 3].</li>
-            <li><strong>CA-07. Exclusión de interrupciones de otros grupos:</strong> Dado que existen interrupciones asociadas exclusivamente a grupos no autorizados al programador, cuando consulta las opciones disponibles, entonces dichas interrupciones no deben presentarse como opciones seleccionables[cite: 3].</li>
-            <li><strong>CA-08. Programador autorizado para varios grupos:</strong> Dado que el programador tiene autorización sobre varios grupos de trabajo, cuando consulta las interrupciones disponibles, entonces el sistema debe presentar las interrupciones asociadas a cualquiera de los grupos autorizados, respetando las demás reglas de acceso vigentes[cite: 3].</li>
-            <li><strong>CA-09. Consistencia de la asignación:</strong> Dado que el programador selecciona una interrupción para utilizarla en la programación, cuando el sistema procesa la operación, entonces debe validar que la interrupción corresponde a un grupo autorizado y cumple las reglas de negocio aplicables[cite: 3].</li>
+            <li><strong>CA-06. Visualización de interrupciones autorizadas:</strong> Dado que el programador tiene autorización sobre uno o varios grupos de trabajo, cuando consulta las interrupciones disponibles en el Programador de Turnos, entonces el sistema debe mostrar las interrupciones asociadas a los grupos autorizados.</li>
+            <li><strong>CA-07. Exclusión de interrupciones de otros grupos:</strong> Dado que existen interrupciones asociadas exclusivamente a grupos no autorizados al programador, cuando consulta las opciones disponibles, entonces dichas interrupciones no deben presentarse como opciones seleccionables.</li>
+            <li><strong>CA-08. Programador autorizado para varios grupos:</strong> Dado que el programador tiene autorización sobre varios grupos de trabajo, cuando consulta las interrupciones disponibles, entonces el sistema debe presentar las interrupciones asociadas a cualquiera de los grupos autorizados, respetando las demás reglas de acceso vigentes.</li>
+            <li><strong>CA-09. Consistencia de la asignación:</strong> Dado que el programador selecciona una interrupción para utilizarla en la programación, cuando el sistema procesa la operación, entonces debe validar que la interrupción corresponde a un grupo autorizado y cumple las reglas de negocio aplicables.</li>
         </ul>
 
         <h3>HU-03. Filtrado de interrupciones en el Portal de Empleados</h3>
         <p><strong>Como</strong> empleado,<br>
         <strong>quiero</strong> visualizar y solicitar únicamente las interrupciones asociadas a mi grupo de trabajo,<br>
-        <strong>para</strong> realizar las solicitudes que correspondan a mi contexto operativo[cite: 3].</p>
-        <p><strong>Prioridad:</strong> Alta &nbsp;|&nbsp; <strong>Módulo:</strong> Portal de Empleados &nbsp;|&nbsp; <strong>Criterios asociados:</strong> CA-10 a CA-13[cite: 3]</p>
+        <strong>para</strong> realizar las solicitudes que correspondan a mi contexto operativo.</p>
+        <p><strong>Prioridad:</strong> Alta &nbsp;|&nbsp; <strong>Módulo:</strong> Portal de Empleados &nbsp;|&nbsp; <strong>Criterios asociados:</strong> CA-10 a CA-13</p>
 
         <h4>Criterios de Aceptación (HU-03)</h4>
         <ul>
-            <li><strong>CA-10. Visualización de interrupciones del grupo:</strong> Dado que el empleado tiene un grupo de trabajo asignado, cuando consulta las interrupciones disponibles en el Portal de Empleados, entonces el sistema debe mostrar únicamente las interrupciones asociadas a su grupo[cite: 3].</li>
-            <li><strong>CA-11. Exclusión de interrupciones ajenas al grupo:</strong> Dado que existen interrupciones asociadas a otros grupos de trabajo, cuando el empleado consulta las opciones disponibles, entonces las interrupciones que no correspondan a su grupo no deben presentarse como opciones seleccionables[cite: 3].</li>
-            <li><strong>CA-12. Solicitud de una interrupción habilitada:</strong> Dado que el empleado visualiza una interrupción asociada a su grupo de trabajo, cuando registra una solicitud y cumple las demás condiciones del proceso, entonces el sistema debe permitir continuar con el flujo de solicitud establecido[cite: 3].</li>
-            <li><strong>CA-13. Validación de la correspondencia del grupo:</strong> Dado que el empleado intenta solicitar una interrupción que no corresponde a su grupo de trabajo, cuando el sistema valida la operación, entonces debe impedir que la solicitud se registre sin cumplir las reglas de asociación y autorización aplicables[cite: 3].</li>
+            <li><strong>CA-10. Visualización de interrupciones del grupo:</strong> Dado que el empleado tiene un grupo de trabajo asignado, cuando consulta las interrupciones disponibles en el Portal de Empleados, entonces el sistema debe mostrar únicamente las interrupciones asociadas a su grupo.</li>
+            <li><strong>CA-11. Exclusión de interrupciones ajenas al grupo:</strong> Dado que existen interrupciones asociadas a otros grupos de trabajo, cuando el empleado consulta las opciones disponibles, entonces las interrupciones que no correspondan a su grupo no deben presentarse como opciones seleccionables.</li>
+            <li><strong>CA-12. Solicitud de una interrupción habilitada:</strong> Dado que el empleado visualiza una interrupción asociada a su grupo de trabajo, cuando registra una solicitud y cumple las demás condiciones del proceso, entonces el sistema debe permitir continuar con el flujo de solicitud establecido.</li>
+            <li><strong>CA-13. Validación de la correspondencia del grupo:</strong> Dado que el empleado intenta solicitar una interrupción que no corresponde a su grupo de trabajo, cuando el sistema valida la operación, entonces debe impedir que la solicitud se registre sin cumplir las reglas de asociación y autorización aplicables.</li>
         </ul>
 
         <h2>9. Flujo Funcional de la Solución</h2>
         <ol>
-            <li>El administrador funcional consulta las interrupciones existentes en Cliente Grueso[cite: 3].</li>
-            <li>Selecciona una interrupción y define los grupos de trabajo a los que debe asociarse[cite: 3].</li>
-            <li>El sistema registra y conserva la configuración[cite: 3].</li>
-            <li>El Programador de Turnos consulta las interrupciones y aplica el filtro según los grupos autorizados al programador[cite: 3].</li>
-            <li>El Portal de Empleados consulta las interrupciones y aplica el filtro según el grupo del empleado[cite: 3].</li>
-            <li>Cuando se intenta asignar o solicitar una interrupción, el sistema valida las reglas correspondientes[cite: 3].</li>
-            <li>QA y los usuarios de negocio verifican los escenarios acordados y registran las evidencias de aceptación[cite: 3].</li>
+            <li>El administrador funcional consulta las interrupciones existentes en Cliente Grueso.</li>
+            <li>Selecciona una interrupción y define los grupos de trabajo a los que debe asociarse.</li>
+            <li>El sistema registra y conserva la configuración.</li>
+            <li>El Programador de Turnos consulta las interrupciones y aplica el filtro según los grupos autorizados al programador.</li>
+            <li>El Portal de Empleados consulta las interrupciones y aplica el filtro según el grupo del empleado.</li>
+            <li>Cuando se intenta asignar o solicitar una interrupción, el sistema valida las reglas correspondientes.</li>
+            <li>QA y los usuarios de negocio verifican los escenarios acordados y registran las evidencias de aceptación.</li>
         </ol>
-        <p><strong>Resultado funcional esperado:</strong> las interrupciones se administran mediante asociaciones explícitas y cada módulo consumidor presenta las opciones que corresponden al contexto operativo de su usuario[cite: 3].</p>
+        <p><strong>Resultado funcional esperado:</strong> las interrupciones se administran mediante asociaciones explícitas y cada módulo consumidor presenta las opciones que corresponden al contexto operativo de su usuario.</p>
 
         <h2>10. Matriz de Trazabilidad</h2>
         <table class="meta-table">
@@ -275,26 +275,26 @@
                     <td>Administrar asociaciones</td>
                     <td>HU-01</td>
                     <td>CA-01 a CA-05</td>
-                    <td>Consultar, registrar y verificar asociaciones válidas e inválidas[cite: 3].</td>
+                    <td>Consultar, registrar y verificar asociaciones válidas e inválidas.</td>
                 </tr>
                 <tr>
                     <td>Filtrar opciones del programador</td>
                     <td>HU-02</td>
                     <td>CA-06 a CA-09</td>
-                    <td>Comparar grupos autorizados con las opciones presentadas y validar la asignación[cite: 3].</td>
+                    <td>Comparar grupos autorizados con las opciones presentadas y validar la asignación.</td>
                 </tr>
                 <tr>
                     <td>Filtrar opciones del empleado</td>
                     <td>HU-03</td>
                     <td>CA-10 a CA-13</td>
-                    <td>Verificar opciones del grupo y validar solicitudes permitidas y no permitidas[cite: 3].</td>
+                    <td>Verificar opciones del grupo y validar solicitudes permitidas y no permitidas.</td>
                 </tr>
             </tbody>
         </table>
-        <p><em>La matriz permite relacionar cada necesidad funcional con una historia de usuario, sus criterios de aceptación y las pruebas que deben demostrar su cumplimiento[cite: 3].</em></p>
+        <p><em>La matriz permite relacionar cada necesidad funcional con una historia de usuario, sus criterios de aceptación y las pruebas que deben demostrar su cumplimiento.</em></p>
 
         <h2>11. Plan de Pruebas Funcionales Propuesto</h2>
-        <p><em>Los siguientes escenarios son una propuesta de validación derivada de los requerimientos. No representan resultados de ejecución ni certifican el comportamiento de un ambiente real[cite: 3].</em></p>
+        <p><em>Los siguientes escenarios son una propuesta de validación derivada de los requerimientos. No representan resultados de ejecución ni certifican el comportamiento de un ambiente real.</em></p>
         <table class="meta-table">
             <thead>
                 <tr>
@@ -304,30 +304,30 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>CP-01</td><td>Asociar una interrupción a un grupo válido[cite: 3].</td><td>La asociación se guarda y puede consultarse[cite: 3].</td></tr>
-                <tr><td>CP-02</td><td>Asociar una interrupción a varios grupos[cite: 3].</td><td>Se conservan las relaciones configuradas[cite: 3].</td></tr>
-                <tr><td>CP-03</td><td>Intentar registrar una asociación con datos inválidos[cite: 3].</td><td>Se impide el registro inconsistente[cite: 3].</td></tr>
-                <tr><td>CP-04</td><td>Consultar el Programador de Turnos con un grupo autorizado[cite: 3].</td><td>Se muestran las interrupciones asociadas al grupo[cite: 3].</td></tr>
-                <tr><td>CP-05</td><td>Consultar el Programador de Turnos con varios grupos autorizados[cite: 3].</td><td>Se muestran las interrupciones correspondientes a esos grupos[cite: 3].</td></tr>
-                <tr><td>CP-06</td><td>Intentar asignar una interrupción no autorizada[cite: 3].</td><td>La operación se rechaza de acuerdo con las reglas de autorización[cite: 3].</td></tr>
-                <tr><td>CP-07</td><td>Consultar el Portal de Empleados con un grupo asignado[cite: 3].</td><td>Se muestran las interrupciones asociadas al grupo del empleado[cite: 3].</td></tr>
-                <tr><td>CP-08</td><td>Intentar solicitar una interrupción de otro grupo[cite: 3].</td><td>La solicitud no se registra si incumple las reglas de asociación[cite: 3].</td></tr>
-                <tr><td>CP-09</td><td>Verificar persistencia de la configuración[cite: 3].</td><td>Las asociaciones conservan la información registrada[cite: 3].</td></tr>
-                <tr><td>CP-10</td><td>Ejecutar pruebas de regresión en los módulos afectados[cite: 3].</td><td>Los comportamientos existentes dentro del alcance de regresión continúan funcionando[cite: 3].</td></tr>
+                <tr><td>CP-01</td><td>Asociar una interrupción a un grupo válido.</td><td>La asociación se guarda y puede consultarse.</td></tr>
+                <tr><td>CP-02</td><td>Asociar una interrupción a varios grupos.</td><td>Se conservan las relaciones configuradas.</td></tr>
+                <tr><td>CP-03</td><td>Intentar registrar una asociación con datos inválidos.</td><td>Se impide el registro inconsistente.</td></tr>
+                <tr><td>CP-04</td><td>Consultar el Programador de Turnos con un grupo autorizado.</td><td>Se muestran las interrupciones asociadas al grupo.</td></tr>
+                <tr><td>CP-05</td><td>Consultar el Programador de Turnos con varios grupos autorizados.</td><td>Se muestran las interrupciones correspondientes a esos grupos.</td></tr>
+                <tr><td>CP-06</td><td>Intentar asignar una interrupción no autorizada.</td><td>La operación se rechaza de acuerdo con las reglas de autorización.</td></tr>
+                <tr><td>CP-07</td><td>Consultar el Portal de Empleados con un grupo asignado.</td><td>Se muestran las interrupciones asociadas al grupo del empleado.</td></tr>
+                <tr><td>CP-08</td><td>Intentar solicitar una interrupción de otro grupo.</td><td>La solicitud no se registra si incumple las reglas de asociación.</td></tr>
+                <tr><td>CP-09</td><td>Verificar persistencia de la configuración.</td><td>Las asociaciones conservan la información registrada.</td></tr>
+                <tr><td>CP-10</td><td>Ejecutar pruebas de regresión en los módulos afectados.</td><td>Los comportamientos existentes dentro del alcance de regresión continúan funcionando.</td></tr>
             </tbody>
         </table>
 
         <h3>Datos de prueba sugeridos</h3>
         <ul>
-            <li>Grupo A y Grupo B[cite: 3].</li>
-            <li>Programador autorizado únicamente para Grupo A[cite: 3].</li>
-            <li>Programador autorizado para los grupos A y B[cite: 3].</li>
-            <li>Empleado perteneciente al Grupo A[cite: 3].</li>
-            <li>Interrupción asociada exclusivamente al Grupo A[cite: 3].</li>
-            <li>Interrupción asociada exclusivamente al Grupo B[cite: 3].</li>
-            <li>Interrupción asociada a ambos grupos[cite: 3].</li>
+            <li>Grupo A y Grupo B.</li>
+            <li>Programador autorizado únicamente para Grupo A.</li>
+            <li>Programador autorizado para los grupos A y B.</li>
+            <li>Empleado perteneciente al Grupo A.</li>
+            <li>Interrupción asociada exclusivamente al Grupo A.</li>
+            <li>Interrupción asociada exclusivamente al Grupo B.</li>
+            <li>Interrupción asociada a ambos grupos.</li>
         </ul>
-        <p><em>Estos datos permiten comprobar tanto los escenarios positivos como los negativos sin depender de nombres o información real de clientes[cite: 3].</em></p>
+        <p><em>Estos datos permiten comprobar tanto los escenarios positivos como los negativos sin depender de nombres o información real de clientes.</em></p>
 
         <!-- SECCIÓN DE EVIDENCIAS OPERATIVAS Y VISUALES -->
         <h2>12. Evidencias Operativas y Visuales del Caso</h2>
@@ -362,34 +362,91 @@
         <p><em>Las evidencias documentales y los rastros de control aseguran que cada módulo consumidor refleje exactamente la parametrización definida, garantizando la consistencia end-to-end del proceso.</em></p>
 
         <h2>13. Riesgos Funcionales y Preguntas de Refinamiento</h2>
-        <p>Antes de aprobar el requerimiento para desarrollo, conviene resolver las siguientes preguntas[cite: 3]:</p>
+        <p>Antes de aprobar el requerimiento para desarrollo, conviene resolver las siguientes preguntas:</p>
         
         <h4>Configuración</h4>
         <ul>
-            <li>¿Una interrupción puede quedar sin grupos asociados?[cite: 3]</li>
-            <li>¿Se permite retirar una asociación ya utilizada en solicitudes existentes?[cite: 3]</li>
-            <li>¿Cómo se evita la duplicidad de una misma asociación?[cite: 3]</li>
-            <li>¿Qué permisos requiere el usuario para administrar las relaciones?[cite: 3]</li>
+            <li>¿Una interrupción puede quedar sin grupos asociados?</li>
+            <li>¿Se permite retirar una asociación ya utilizada en solicitudes existentes?</li>
+            <li>¿Cómo se evita la duplicidad de una misma asociación?</li>
+            <li>¿Qué permisos requiere el usuario para administrar las relaciones?</li>
         </ul>
 
         <h4>Programador de Turnos</h4>
         <ul>
-            <li>¿Cómo debe comportarse el módulo cuando el programador no tiene grupos autorizados?[cite: 3]</li>
-            <li>¿Las asociaciones se actualizan inmediatamente o requieren recargar la sesión?[cite: 3]</li>
-            <li>¿El filtro debe aplicarse también al consultar o modificar registros existentes?[cite: 3]</li>
+            <li>¿Cómo debe comportarse el módulo cuando el programador no tiene grupos autorizados?</li>
+            <li>¿Las asociaciones se actualizan inmediatamente o requieren recargar la sesión?</li>
+            <li>¿El filtro debe aplicarse también al consultar o modificar registros existentes?</li>
         </ul>
 
         <h4>Portal de Empleados</h4>
         <ul>
-            <li>¿Qué ocurre si un empleado no tiene grupo asignado?[cite: 3]</li>
-            <li>¿Qué sucede si el empleado cambia de grupo y tiene solicitudes pendientes?[cite: 3]</li>
-            <li>¿Qué validaciones se deben ejecutar al registrar la solicitud para evitar inconsistencias?[cite: 3]</li>
+            <li>¿Qué ocurre si un empleado no tiene grupo asignado?</li>
+            <li>¿Qué sucede si el empleado cambia de grupo y tiene solicitudes pendientes?</li>
+            <li>¿Qué validaciones se deben ejecutar al registrar la solicitud para evitar inconsistencias?</li>
         </ul>
 
         <h4>Integración y seguridad</h4>
         <ul>
-            <li>¿Qué componente es la fuente oficial de la relación entre empleado y grupo?[cite: 3]</li>
-            <li>¿Cómo se garantiza que el filtro no pueda eludirse mediante una operación directa?[cite: 3]</li>
-            <li>¿Qué comportamiento se espera si no se puede consultar la configuración de asociaciones?[cite: 3]</li>
+            <li>¿Qué componente es la fuente oficial de la relación entre empleado y grupo?</li>
+            <li>¿Cómo se garantiza que el filtro no pueda eludirse mediante una operación directa?</li>
+            <li>¿Qué comportamiento se espera si no se puede consultar la configuración de asociaciones?</li>
         </ul>
-        <p>
+        <p><em>Estas preguntas deben resolverse con negocio, Desarrollo y QA según corresponda. No se deben presentar como reglas aprobadas mientras no exista una definición explícita.</em></p>
+
+        <h2>14. Criterios de Salida y Aceptación Funcional</h2>
+        <p>La funcionalidad podrá considerarse candidata a aceptación cuando:</p>
+        <ul>
+            <li>Las asociaciones puedan administrarse conforme a las reglas aprobadas.</li>
+            <li>El Programador de Turnos presente únicamente las interrupciones permitidas para los grupos autorizados.</li>
+            <li>El Portal de Empleados presente únicamente las interrupciones correspondientes al grupo del empleado.</li>
+            <li>Las operaciones de asignación y solicitud respeten las validaciones aplicables.</li>
+            <li>Los escenarios negativos acordados se comporten como se espera.</li>
+            <li>No se identifiquen regresiones críticas en los módulos incluidos en el alcance de pruebas.</li>
+            <li>Las evidencias de ejecución y las incidencias encontradas queden documentadas.</li>
+            <li>El usuario responsable pueda revisar los resultados y emitir la aceptación correspondiente.</li>
+        </ul>
+        <p><em>Estos criterios definen las condiciones propuestas para aceptar la funcionalidad. La aceptación efectiva dependerá de la ejecución de las pruebas, la resolución de los defectos bloqueantes y la aprobación del responsable de negocio.</em></p>
+
+        <h2>15. Entregables del Análisis Funcional</h2>
+        <p>Para este caso se consideran los siguientes entregables:</p>
+        <ol>
+            <li>Contexto y objetivo funcional.</li>
+            <li>Definición de alcance y exclusiones.</li>
+            <li>Actores, precondiciones y supuestos.</li>
+            <li>Reglas de negocio.</li>
+            <li>Tres historias de usuario.</li>
+            <li>Trece criterios de aceptación.</li>
+            <li>Flujo funcional.</li>
+            <li>Matriz de trazabilidad.</li>
+            <li>Plan de pruebas funcionales propuesto.</li>
+            <li>Riesgos y preguntas de refinamiento.</li>
+            <li>Criterios de salida y aceptación funcional.</li>
+        </ol>
+
+        <h2>16. Valor Aportado desde el Rol de Analista Funcional con Enfoque QA</h2>
+        <p>El caso demuestra cómo una necesidad operativa puede traducirse en requerimientos estructurados y verificables.</p>
+        <p>El trabajo funcional no se limita a redactar historias de usuario. También requiere delimitar el alcance, identificar dependencias, definir reglas de negocio, anticipar excepciones y establecer condiciones objetivas para verificar la solución.</p>
+        <p>La integración del enfoque QA desde el análisis permite detectar ambigüedades antes del desarrollo y relacionar los criterios de aceptación con escenarios de prueba concretos.</p>
+        
+        <h3>Competencias demostradas en el caso:</h3>
+        <div style="margin-top: 1rem; margin-bottom: 1rem;">
+            <span class="badge">Levantamiento y Estructuración de Requerimientos</span>
+            <span class="badge">Historias de Usuario & Criterios de Aceptación (Gherkin)</span>
+            <span class="badge">Análisis de Reglas de Negocio</span>
+            <span class="badge">Delimitación de Alcance y Supuestos</span>
+            <span class="badge">Trazabilidad Funcional & Pruebas QA</span>
+            <span class="badge">Escenarios Negativos y Gestión de Riesgos</span>
+            <span class="badge">Articulación Negocio-Desarrollo-QA</span>
+            <span class="badge">Validación Multi-módulo</span>
+        </div>
+
+        <h2>17. Nota de Transparencia</h2>
+        <blockquote>
+            Este caso utiliza una organización de referencia anonimizada para proteger información empresarial. Los criterios de aceptación, los escenarios de prueba y las preguntas de refinamiento documentan el análisis funcional propuesto.<br><br>
+            Las pruebas descritas son escenarios planificados y no deben interpretarse como pruebas ejecutadas ni como evidencia de resultados en producción. Cualquier resultado, aprobación o métrica deberá agregarse únicamente cuando exista evidencia verificable que lo respalde.
+        </blockquote>
+    </div>
+
+</body>
+</html>
